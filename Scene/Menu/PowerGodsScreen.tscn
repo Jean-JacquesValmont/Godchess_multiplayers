@@ -1,0 +1,163 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Image/Menu/PowerScreen.png" type="Texture" id=1]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Fou.png" type="Texture" id=2]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Pion.png" type="Texture" id=3]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Cavalier.png" type="Texture" id=4]
+[ext_resource path="res://Font/Forgotten.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Roi.png" type="Texture" id=6]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Tour.png" type="Texture" id=7]
+[ext_resource path="res://Image/Pieces/Déesse de la Téléportation/Base pièce doubler - Reine.png" type="Texture" id=8]
+[ext_resource path="res://Image/Animation/ExplanationPowers/Déésse de la téléportation gif/PowerGodsScreen.tres" type="SpriteFrames" id=9]
+[ext_resource path="res://Script/Menu/PowerGodsScreen.gd" type="Script" id=1569]
+[ext_resource path="res://Font/ARIAL.TTF" type="DynamicFontData" id=1570]
+
+[sub_resource type="DynamicFont" id=1]
+size = 69
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1570 )
+
+[node name="PowerGodsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1569 )
+
+[node name="PowerGodsScreenDisplay" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="PowerLabel" type="Label" parent="PowerGodsScreenDisplay"]
+margin_left = 229.0
+margin_top = 127.0
+margin_right = 499.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 1 )
+text = "POUVOIR"
+
+[node name="PassifButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 630.0
+margin_top = 225.0
+margin_right = 1283.0
+margin_bottom = 298.0
+
+[node name="SpritePawn" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( -276, 429 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 573, -241 )
+
+[node name="PawnButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 2.0
+margin_top = 305.0
+margin_right = 297.0
+margin_bottom = 409.0
+
+[node name="SpriteKnight" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( 304, 310 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="KnightButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 304.0
+margin_top = 305.0
+margin_right = 626.0
+margin_bottom = 409.0
+
+[node name="SpriteBishop" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( 667, 308 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BishopButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 634.0
+margin_top = 306.0
+margin_right = 946.0
+margin_bottom = 409.0
+
+[node name="SpriteRook" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( 991, 308 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="RookButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 953.0
+margin_top = 305.0
+margin_right = 1283.0
+margin_bottom = 410.0
+
+[node name="SpriteQueen" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( 1306, 308 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="QueenButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1291.0
+margin_top = 306.0
+margin_right = 1607.0
+margin_bottom = 409.0
+
+[node name="SpriteKing" type="Sprite" parent="PowerGodsScreenDisplay"]
+position = Vector2( 1656, 307 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="KingButton" type="Button" parent="PowerGodsScreenDisplay"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1613.0
+margin_top = 306.0
+margin_right = 1919.0
+margin_bottom = 409.0
+
+[node name="Description" type="Control" parent="PowerGodsScreenDisplay"]
+margin_left = 2.0
+margin_top = 418.0
+margin_right = 1918.0
+margin_bottom = 989.0
+
+[node name="ExplanationTextPowers" type="RichTextLabel" parent="PowerGodsScreenDisplay/Description"]
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 1193.0
+margin_bottom = 534.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Chaque pièces possèdent sa zone de téléportation.
+La téléportation est obligatoirement symétrique par rapport à la pièce.
+Une pièce jouée sur une case comprenant deux zones de téléportation ou plus, la téléportation ne s’effectue pas.
+Il ne peut y avoir qu’une téléportation au cours d’un mouvement. Les pièces adverses ne peuvent pas activer la téléportation."
+
+[node name="ExplanationGifPowers" type="AnimatedSprite" parent="PowerGodsScreenDisplay/Description"]
+position = Vector2( 1574, 291 )
+frames = ExtResource( 9 )
+animation = "Passif"
+
+[node name="PlayAnimated" type="Control" parent="PowerGodsScreenDisplay/Description"]
+margin_left = 1295.0
+margin_top = 12.0
+margin_right = 1850.0
+margin_bottom = 567.0
+
+[connection signal="pressed" from="PowerGodsScreenDisplay/PassifButton" to="." method="_on_PassifButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/PawnButton" to="." method="_on_PawnButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/KnightButton" to="." method="_on_KnightButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/BishopButton" to="." method="_on_BishopButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/RookButton" to="." method="_on_RookButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/QueenButton" to="." method="_on_QueenButton_pressed"]
+[connection signal="pressed" from="PowerGodsScreenDisplay/KingButton" to="." method="_on_KingButton_pressed"]
+[connection signal="animation_finished" from="PowerGodsScreenDisplay/Description/ExplanationGifPowers" to="." method="_on_ExplanationGifPowers_animation_finished"]
+[connection signal="mouse_entered" from="PowerGodsScreenDisplay/Description/PlayAnimated" to="." method="_on_PlayAnimated_mouse_entered"]
+[connection signal="mouse_exited" from="PowerGodsScreenDisplay/Description/PlayAnimated" to="." method="_on_PlayAnimated_mouse_exited"]

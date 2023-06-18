@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Image/Menu/ConnexionScreenBackground.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Menu/ConnectionScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Main.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Menu/PlayScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Menu/ReadyScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Menu/OngletScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/Menu/GodsScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Game/MatchGame.tscn" type="PackedScene" id=8]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MatchGame" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="BackgroundMenu" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ConnectionScreen" parent="BackgroundMenu" instance=ExtResource( 2 )]
+
+[node name="PlayScreen" parent="BackgroundMenu" instance=ExtResource( 4 )]
+visible = false
+
+[node name="ReadyScreen" parent="BackgroundMenu" instance=ExtResource( 5 )]
+visible = false
+
+[node name="GodsScreen" parent="BackgroundMenu" instance=ExtResource( 7 )]
+visible = false
+
+[node name="OngletScreen" parent="BackgroundMenu" instance=ExtResource( 6 )]
+visible = false
+
+[connection signal="changed_tabs_play" from="." to="BackgroundMenu/OngletScreen" method="_on_Main_changed_tabs_play"]
+[connection signal="game_started" from="MatchGame" to="." method="_on_MatchGame_game_started"]
+[connection signal="play_pressed" from="BackgroundMenu/ConnectionScreen" to="." method="_on_ConnectionScreen_play_pressed"]
+[connection signal="hide" from="BackgroundMenu/PlayScreen" to="." method="_on_PlayScreen_hide"]
+[connection signal="visibility_changed" from="BackgroundMenu/PlayScreen" to="." method="_on_PlayScreen_visibility_changed"]
+[connection signal="back_pressed" from="BackgroundMenu/ReadyScreen" to="." method="_on_ReadyScreen_back_pressed"]
+[connection signal="ready_pressed" from="BackgroundMenu/ReadyScreen" to="." method="_on_ReadyScreen_ready_pressed"]
+[connection signal="gods_tabs" from="BackgroundMenu/OngletScreen" to="." method="_on_OngletScreen_gods_tabs"]
+[connection signal="play_tabs" from="BackgroundMenu/OngletScreen" to="." method="_on_OngletScreen_play_tabs"]

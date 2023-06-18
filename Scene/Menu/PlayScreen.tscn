@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Script/Menu/PlayScreen.gd" type="Script" id=1]
+[ext_resource path="res://Image/Menu/PlayScreen.png" type="Texture" id=2]
+[ext_resource path="res://Font/ARIAL.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Font/new_dynamicfont_arial.tres" type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="PlayScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="DisplayTimerFindMatch" type="Label" parent="."]
+visible = false
+margin_left = 796.0
+margin_top = 994.0
+margin_right = 1065.0
+margin_bottom = 1061.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="TimerFindMatch" type="Timer" parent="DisplayTimerFindMatch"]
+
+[node name="PlayScreenDisplay" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ModeClan" type="Control" parent="PlayScreenDisplay"]
+margin_left = 477.0
+margin_top = 182.0
+margin_right = 867.0
+margin_bottom = 934.0
+
+[node name="SearchButton" type="Button" parent="PlayScreenDisplay/ModeClan"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 66.0
+margin_top = 501.0
+margin_right = 335.0
+margin_bottom = 554.0
+text = "Search"
+
+[node name="ModePartiePerso" type="Control" parent="PlayScreenDisplay"]
+margin_left = 1045.0
+margin_top = 184.0
+margin_right = 1436.0
+margin_bottom = 935.0
+
+[node name="IDMatchText" type="LineEdit" parent="PlayScreenDisplay/ModePartiePerso"]
+margin_left = 26.0
+margin_top = 670.0
+margin_right = 367.0
+margin_bottom = 716.0
+custom_fonts/font = ExtResource( 4 )
+placeholder_text = "Collé id du match ici"
+
+[node name="CreateButton" type="Button" parent="PlayScreenDisplay/ModePartiePerso"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 118.0
+margin_top = 489.0
+margin_right = 278.0
+margin_bottom = 552.0
+
+[node name="JoinButton" type="Button" parent="PlayScreenDisplay/ModePartiePerso"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 84.0
+margin_top = 606.0
+margin_right = 315.0
+margin_bottom = 657.0

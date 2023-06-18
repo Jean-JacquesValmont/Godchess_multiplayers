@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Image/Menu/ReadyScreen.png" type="Texture" id=1]
+[ext_resource path="res://Font/Forgotten.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scene/Menu/PeerStatus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Script/Menu/ReadyScreen.gd" type="Script" id=4]
+[ext_resource path="res://Image/Menu/QuitButtonScreen.png" type="Texture" id=5]
+[ext_resource path="res://Font/new_dynamicfont_arial.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Font/ARIAL.TTF" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+extra_spacing_space = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 7 )
+
+[node name="ReadyScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ReadyScreenDisplay" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ReadyScreenBox" type="Control" parent="ReadyScreenDisplay"]
+margin_left = 517.0
+margin_top = 187.0
+margin_right = 1418.0
+margin_bottom = 946.0
+
+[node name="GameName" type="Label" parent="ReadyScreenDisplay/ReadyScreenBox"]
+margin_left = 13.0
+margin_top = 15.0
+margin_right = 886.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 1 )
+text = "Partie de Username"
+align = 1
+valign = 1
+
+[node name="StatusContainer" type="VBoxContainer" parent="ReadyScreenDisplay/ReadyScreenBox"]
+margin_left = 20.0
+margin_top = 134.0
+margin_right = 878.0
+margin_bottom = 442.0
+
+[node name="PeerStatus" parent="ReadyScreenDisplay/ReadyScreenBox/StatusContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 858.0
+margin_bottom = 57.0
+
+[node name="MatchIDText" type="LineEdit" parent="ReadyScreenDisplay/ReadyScreenBox"]
+margin_left = 47.0
+margin_top = 551.0
+margin_right = 854.0
+margin_bottom = 617.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="DisplayTimerDisconneted" type="Label" parent="ReadyScreenDisplay/ReadyScreenBox"]
+margin_left = 49.0
+margin_top = 643.0
+margin_right = 279.0
+margin_bottom = 733.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+
+[node name="ReadyButton" type="Button" parent="ReadyScreenDisplay/ReadyScreenBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 322.0
+margin_top = 636.0
+margin_right = 577.0
+margin_bottom = 737.0
+
+[node name="BackButtonDisplay" type="Sprite" parent="ReadyScreenDisplay/ReadyScreenBox"]
+position = Vector2( -517, -187 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="BackButton" type="Button" parent="ReadyScreenDisplay/ReadyScreenBox"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 604.0
+margin_top = 636.0
+margin_right = 859.0
+margin_bottom = 738.0
+text = "Quit"
+
+[connection signal="pressed" from="ReadyScreenDisplay/ReadyScreenBox/ReadyButton" to="." method="_on_ReadyButton_pressed"]
+[connection signal="pressed" from="ReadyScreenDisplay/ReadyScreenBox/BackButton" to="." method="_on_BackButton_pressed"]
