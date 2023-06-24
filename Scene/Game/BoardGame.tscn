@@ -1,0 +1,240 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Script/Plateau_echec.gd" type="Script" id=1]
+[ext_resource path="res://Image/Game/GameBoardScreen.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Pieces/Pawn_white.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Pieces/Knight_white.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scene/Pieces/Rook_white.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Pieces/Bishop_white.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scene/Pieces/Queen_white.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scene/Pieces/King_white.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/Pieces/Pawn_black.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scene/Pieces/Knight_black.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene/Pieces/Bishop_black.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scene/Pieces/Queen_black.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scene/Pieces/King_black.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scene/Pieces/Rook_black.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Font/Forgotten.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Image/Game/Bannière.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 15 )
+
+[node name="BoardGame" type="Sprite"]
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 1 )
+
+[node name="Pawn_white" parent="." instance=ExtResource( 3 )]
+position = Vector2( 560, 742 )
+
+[node name="Pawn_white2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 660, 742 )
+
+[node name="Pawn_white3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 760, 742 )
+
+[node name="Pawn_white4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 860, 742 )
+
+[node name="Pawn_white5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 960, 742 )
+
+[node name="Pawn_white6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1060, 742 )
+
+[node name="Pawn_white7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1160, 742 )
+
+[node name="Pawn_white8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1260, 742 )
+
+[node name="Knight_white" parent="." instance=ExtResource( 4 )]
+position = Vector2( 660, 842 )
+
+[node name="Knight_white2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1160, 842 )
+
+[node name="Bishop_white" parent="." instance=ExtResource( 6 )]
+position = Vector2( 760, 842 )
+
+[node name="Bishop_white2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1060, 842 )
+
+[node name="Rook_white" parent="." instance=ExtResource( 5 )]
+position = Vector2( 560, 842 )
+
+[node name="Rook_white2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1260, 842 )
+
+[node name="Queen_white" parent="." instance=ExtResource( 7 )]
+position = Vector2( 860, 842 )
+
+[node name="King_white" parent="." instance=ExtResource( 8 )]
+position = Vector2( 960, 842 )
+
+[node name="Pawn_black" parent="." instance=ExtResource( 9 )]
+position = Vector2( 560, 240 )
+
+[node name="Pawn_black2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 660, 240 )
+
+[node name="Pawn_black3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 760, 240 )
+
+[node name="Pawn_black4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 860, 240 )
+
+[node name="Pawn_black5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 960, 240 )
+
+[node name="Pawn_black6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1060, 240 )
+
+[node name="Pawn_black7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1160, 240 )
+
+[node name="Pawn_black8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1260, 240 )
+
+[node name="Knight_black" parent="." instance=ExtResource( 10 )]
+position = Vector2( 660, 140 )
+
+[node name="Knight_black2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1160, 140 )
+
+[node name="Bishop_black" parent="." instance=ExtResource( 11 )]
+position = Vector2( 760, 140 )
+
+[node name="Bishop_black2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1060, 140 )
+
+[node name="Rook_black" parent="." instance=ExtResource( 14 )]
+position = Vector2( 560, 140 )
+
+[node name="Rook_black2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1260, 140 )
+
+[node name="Queen_black" parent="." instance=ExtResource( 12 )]
+position = Vector2( 860, 140 )
+
+[node name="King_black" parent="." instance=ExtResource( 13 )]
+position = Vector2( 960, 140 )
+
+[node name="Text_echec_black" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 10.0
+margin_top = 245.0
+margin_right = 159.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 1 )
+text = "ECHEC"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Text_echec_white" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 1761.0
+margin_top = 655.0
+margin_right = 1909.0
+margin_bottom = 823.0
+custom_fonts/font = SubResource( 2 )
+text = "ECHEC"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BannerPlayer" type="Sprite" parent="."]
+position = Vector2( 791.25, 397.5 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="BannerOpponent" type="Sprite" parent="."]
+position = Vector2( -626.25, -380 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="UsernamePlayer" type="Label" parent="."]
+margin_left = 1440.0
+margin_top = 882.0
+margin_right = 1899.0
+margin_bottom = 978.0
+custom_fonts/font = SubResource( 3 )
+text = "USERNAME"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="UsernameOpponent" type="Label" parent="."]
+margin_left = 18.75
+margin_top = 98.75
+margin_right = 482.75
+margin_bottom = 204.75
+custom_fonts/font = SubResource( 4 )
+text = "USERNAME"
+align = 1
+valign = 1
+uppercase = true
+
+[connection signal="opponent_turned" from="Pawn_white" to="." method="_on_Pawn_white_opponent_turned"]
+[connection signal="promotion" from="Pawn_white" to="." method="_on_Pawn_white_promotion"]
+[connection signal="opponent_turned" from="Pawn_white2" to="." method="_on_Pawn_white2_opponent_turned"]
+[connection signal="promotion" from="Pawn_white2" to="." method="_on_Pawn_white2_promotion"]
+[connection signal="opponent_turned" from="Pawn_white3" to="." method="_on_Pawn_white3_opponent_turned"]
+[connection signal="promotion" from="Pawn_white3" to="." method="_on_Pawn_white3_promotion"]
+[connection signal="opponent_turned" from="Pawn_white4" to="." method="_on_Pawn_white4_opponent_turned"]
+[connection signal="promotion" from="Pawn_white4" to="." method="_on_Pawn_white4_promotion"]
+[connection signal="opponent_turned" from="Pawn_white5" to="." method="_on_Pawn_white5_opponent_turned"]
+[connection signal="promotion" from="Pawn_white5" to="." method="_on_Pawn_white5_promotion"]
+[connection signal="opponent_turned" from="Pawn_white6" to="." method="_on_Pawn_white6_opponent_turned"]
+[connection signal="promotion" from="Pawn_white6" to="." method="_on_Pawn_white6_promotion"]
+[connection signal="opponent_turned" from="Pawn_white7" to="." method="_on_Pawn_white7_opponent_turned"]
+[connection signal="promotion" from="Pawn_white7" to="." method="_on_Pawn_white7_promotion"]
+[connection signal="opponent_turned" from="Pawn_white8" to="." method="_on_Pawn_white8_opponent_turned"]
+[connection signal="promotion" from="Pawn_white8" to="." method="_on_Pawn_white8_promotion"]
+[connection signal="opponent_turned" from="Knight_white" to="." method="_on_Knight_white_opponent_turned"]
+[connection signal="opponent_turned" from="Knight_white2" to="." method="_on_Knight_white2_opponent_turned"]
+[connection signal="opponent_turned" from="Bishop_white" to="." method="_on_Bishop_white_opponent_turned"]
+[connection signal="opponent_turned" from="Bishop_white2" to="." method="_on_Bishop_white2_opponent_turned"]
+[connection signal="opponent_turned" from="Rook_white" to="." method="_on_Rook_white_opponent_turned"]
+[connection signal="opponent_turned" from="Rook_white2" to="." method="_on_Rook_white2_opponent_turned"]
+[connection signal="opponent_turned" from="Queen_white" to="." method="_on_Queen_white_opponent_turned"]
+[connection signal="Grand_roque" from="King_white" to="Rook_white" method="_on_King_white_Grand_roque"]
+[connection signal="Petit_roque" from="King_white" to="Rook_white2" method="_on_King_white_Petit_roque"]
+[connection signal="check_to_the_king" from="King_white" to="." method="_on_King_white_check_to_the_king"]
+[connection signal="checkmate_to_the_king" from="King_white" to="." method="_on_King_white_checkmate_to_the_king"]
+[connection signal="opponent_turned" from="King_white" to="." method="_on_King_white_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black" to="." method="_on_Pawn_black_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black2" to="." method="_on_Pawn_black2_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black3" to="." method="_on_Pawn_black3_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black4" to="." method="_on_Pawn_black4_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black5" to="." method="_on_Pawn_black5_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black6" to="." method="_on_Pawn_black6_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black7" to="." method="_on_Pawn_black7_opponent_turned"]
+[connection signal="opponent_turned" from="Pawn_black8" to="." method="_on_Pawn_black8_opponent_turned"]
+[connection signal="opponent_turned" from="Knight_black" to="." method="_on_Knight_black_opponent_turned"]
+[connection signal="opponent_turned" from="Knight_black2" to="." method="_on_Knight_black2_opponent_turned"]
+[connection signal="opponent_turned" from="Bishop_black" to="." method="_on_Bishop_black_opponent_turned"]
+[connection signal="opponent_turned" from="Bishop_black2" to="." method="_on_Bishop_black2_opponent_turned"]
+[connection signal="opponent_turned" from="Rook_black" to="." method="_on_Rook_black_opponent_turned"]
+[connection signal="opponent_turned" from="Rook_black2" to="." method="_on_Rook_black2_opponent_turned"]
+[connection signal="opponent_turned" from="Queen_black" to="." method="_on_Queen_black_opponent_turned"]
+[connection signal="Grand_roque" from="King_black" to="Rook_black" method="_on_King_black_Grand_roque"]
+[connection signal="Petit_roque" from="King_black" to="Rook_black2" method="_on_King_black_Petit_roque"]
+[connection signal="check_to_the_king" from="King_black" to="." method="_on_King_black_check_to_the_king"]
+[connection signal="checkmate_to_the_king" from="King_black" to="." method="_on_King_black_checkmate_to_the_king"]
+[connection signal="opponent_turned" from="King_black" to="." method="_on_King_black_opponent_turned"]

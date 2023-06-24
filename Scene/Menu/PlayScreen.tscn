@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Script/Menu/PlayScreen.gd" type="Script" id=1]
 [ext_resource path="res://Image/Menu/PlayScreen.png" type="Texture" id=2]
 [ext_resource path="res://Font/ARIAL.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Font/new_dynamicfont_arial.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Image/Menu/ButtonCancelTwo.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -44,6 +45,12 @@ margin_right = 335.0
 margin_bottom = 554.0
 text = "Search"
 
+[node name="ButtonCancelDisplay" type="Sprite" parent="PlayScreenDisplay/ModeClan"]
+visible = false
+position = Vector2( -476, -181 )
+texture = ExtResource( 5 )
+centered = false
+
 [node name="ModePartiePerso" type="Control" parent="PlayScreenDisplay"]
 margin_left = 1045.0
 margin_top = 184.0
@@ -56,7 +63,7 @@ margin_top = 670.0
 margin_right = 367.0
 margin_bottom = 716.0
 custom_fonts/font = ExtResource( 4 )
-placeholder_text = "Collé id du match ici"
+placeholder_text = "ID du match ici"
 
 [node name="CreateButton" type="Button" parent="PlayScreenDisplay/ModePartiePerso"]
 modulate = Color( 1, 1, 1, 0 )

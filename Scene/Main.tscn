@@ -12,11 +12,21 @@
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stretch = true
+stretch_shrink = 2
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 960, 540 )
+handle_input_locally = false
+render_target_update_mode = 3
+
 [node name="MatchGame" parent="." instance=ExtResource( 8 )]
 visible = false
 
 [node name="BackgroundMenu" type="Sprite" parent="."]
-scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -36,6 +46,7 @@ visible = false
 
 [connection signal="changed_tabs_play" from="." to="BackgroundMenu/OngletScreen" method="_on_Main_changed_tabs_play"]
 [connection signal="game_started" from="MatchGame" to="." method="_on_MatchGame_game_started"]
+[connection signal="game_stop" from="MatchGame" to="." method="_on_MatchGame_game_stop"]
 [connection signal="play_pressed" from="BackgroundMenu/ConnectionScreen" to="." method="_on_ConnectionScreen_play_pressed"]
 [connection signal="hide" from="BackgroundMenu/PlayScreen" to="." method="_on_PlayScreen_hide"]
 [connection signal="visibility_changed" from="BackgroundMenu/PlayScreen" to="." method="_on_PlayScreen_visibility_changed"]

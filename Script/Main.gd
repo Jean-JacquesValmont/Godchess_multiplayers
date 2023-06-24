@@ -73,3 +73,20 @@ func start_game() -> void:
 func _on_MatchGame_game_started():
 	print("Hide BackgroundMenu")
 	$BackgroundMenu.hide()
+
+func stop_game() -> void:
+	print("function stop_game")
+	$MatchGame.hide()
+	OnlineMatch.leave()
+	
+	$BackgroundMenu.show()
+	$BackgroundMenu/PlayScreen.show()
+	$BackgroundMenu/ReadyScreen.hide()
+	players.clear()
+	players_ready.clear()
+
+	$MatchGame.game_stop()
+
+func _on_MatchGame_game_stop():
+	print("function _on_Game_game_stop")
+	stop_game()

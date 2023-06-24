@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Image/Pieces/White/bishop_white.png" type="Texture" id=1]
+[ext_resource path="res://Script/Pieces/Bishop_white.gd" type="Script" id=2]
+[ext_resource path="res://Sound/Sound_piece_move.tres" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45, 45 )
+
+[node name="Bishop_white" type="Sprite"]
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 50, 50 )
+shape = SubResource( 1 )
+
+[node name="Sound_piece_move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

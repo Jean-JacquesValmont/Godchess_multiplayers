@@ -2,6 +2,7 @@ extends Control
 
 onready var join_match_id := $PlayScreenDisplay/ModePartiePerso/IDMatchText
 onready var display_timer_find_match := $DisplayTimerFindMatch
+onready var display_button_cancel := $PlayScreenDisplay/ModeClan/ButtonCancelDisplay
 onready var path_search_button = $PlayScreenDisplay/ModeClan/SearchButton
 onready var path_create_button = $PlayScreenDisplay/ModePartiePerso/CreateButton
 onready var path_join_button = $PlayScreenDisplay/ModePartiePerso/JoinButton
@@ -45,10 +46,12 @@ func _on_match_button_pressed(mode) -> void:
 			if path_search_button.text == "Search" :
 				print("Start_matchmaking")
 				_start_matchmaking()
+				display_button_cancel.visible = true
 			elif path_search_button.text == "Cancel" : 
 				print("Cancel matchmaking")
 				OnlineMatch.leave()
 				display_timer_find_match.visible = false
+				display_button_cancel.visible = false
 				path_search_button.text = "Search"
 				timer_running = false
 				timer = 0
@@ -88,7 +91,7 @@ func _join_match() -> void:
 		return
 	if not match_id.ends_with('.'):
 		match_id += '.'
-
+	
 	OnlineMatch.join_match(Online.nakama_socket, match_id)
 
 func _on_OnlineMatch_joined(match_id: String, match_mode: int):
@@ -100,6 +103,7 @@ func _on_OnlineMatch_joined(match_id: String, match_mode: int):
 	if match_mode != OnlineMatch.MatchMode.MATCHMAKER:
 		info['match_id'] = match_id
 	
+	join_match_id.text = ""
 	self.hide()
 	emit_signal("hide", info)
 	
